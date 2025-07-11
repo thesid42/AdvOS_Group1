@@ -1,6 +1,30 @@
 #include <stdlib.h>
 #include <string.h>
 #include "process.h"
+#include <stdio.h>
+#include "process.h"
+
+char time_chart[MAX_QUANTA];
+int chart_index = 0;
+
+void add_to_time_chart(char pid) {
+    if (chart_index < MAX_QUANTA) {
+        time_chart[chart_index++] = pid;
+    }
+}
+
+void print_time_chart() {
+    printf("Time Chart: ");
+    for (int i = 0; i < chart_index; i++) {
+        printf("%c", time_chart[i]);
+    }
+    printf("\n");
+}
+
+void reset_time_chart() {
+    chart_index = 0;
+}
+
 
 int cmp_arrival(const void *a, const void *b) {
     Process *p1 = (Process *)a;

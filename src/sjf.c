@@ -8,6 +8,7 @@ void run_sjf(Process *procs, int n) {
     int time = 0, completed = 0;
     int is_completed[MAX_PROCESSES] = {0};
     int total_turnaround = 0, total_waiting = 0, total_response = 0;
+    reset_time_chart();
 
     while (completed < n) {
         Process *ready[MAX_PROCESSES];
@@ -27,6 +28,9 @@ void run_sjf(Process *procs, int n) {
         Process *curr = ready[0];
 
         curr->start_time = time;
+        for (int q = 0; q < curr->burst_time; q++) {
+            add_to_time_chart(curr->name[0]);
+        } 
         curr->finish_time = time + curr->burst_time;
         time += curr->burst_time;
 
@@ -53,4 +57,5 @@ void run_sjf(Process *procs, int n) {
     printf("Avg Waiting Time   : %.2f\n", (float)total_waiting / n);
     printf("Avg Response Time  : %.2f\n", (float)total_response / n);
     printf("Throughput         : %.2f\n", (float)n / time);
+    print_time_chart();
 }

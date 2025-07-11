@@ -4,6 +4,16 @@
 #define MAX_PROCESSES 100
 #define MAX_NAME_LEN 3
 
+#define MAX_QUANTA 1000 
+
+extern char time_chart[MAX_QUANTA];
+extern int chart_index;
+
+void add_to_time_chart(char pid);
+void print_time_chart();
+void reset_time_chart();
+
+
 typedef struct {
     char name[MAX_NAME_LEN];
     int arrival_time;
