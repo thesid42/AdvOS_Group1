@@ -8,6 +8,7 @@ void run_srt(Process *procs, int n) {
     int first_response[MAX_PROCESSES] = {0};
 
     printf("\n--- SRT (Shortest Remaining Time First) Scheduling ---\n");
+    reset_time_chart();  // Clear time chart at the beginning
 
     while (completed < n && time <= 100) {
         int shortest = -1;
@@ -31,6 +32,7 @@ void run_srt(Process *procs, int n) {
         }
 
         procs[shortest].remaining_time--;
+        add_to_time_chart(procs[shortest].name[0]);  // Track time chart
         time++;
 
         if (procs[shortest].remaining_time == 0) {
@@ -52,4 +54,5 @@ void run_srt(Process *procs, int n) {
     printf("Avg Waiting Time   : %.2f\n", (float)total_waiting / n);
     printf("Avg Response Time  : %.2f\n", (float)total_response / n);
     printf("Throughput         : %.2f\n", (float)n / time);
+    print_time_chart();  // Print final time chart
 }
