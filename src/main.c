@@ -7,6 +7,8 @@ AlgorithmStats run_fcfs(Process *procs, int n, int run_num);
 AlgorithmStats run_sjf(Process *procs, int n, int run_num);
 AlgorithmStats run_srt(Process *procs, int n, int run_num);
 AlgorithmStats run_rr(Process *procs, int n, int run_num);
+AlgorithmStats run_hpf_non_preemptive(Process *procs, int n, int run_num);
+AlgorithmStats run_hpf_preemptive(Process *procs, int n, int run_num);
 
 int main() {
     Process procs[MAX_PROCESSES];
@@ -14,6 +16,7 @@ int main() {
     const int NUM_RUNS = 5;
     AlgorithmStats fcfs_stats[NUM_RUNS], sjf_stats[NUM_RUNS];
     AlgorithmStats srt_stats[NUM_RUNS], rr_stats[NUM_RUNS];
+    AlgorithmStats hpf_non_preemptive_stats[NUM_RUNS], hpf_preemptive_stats[NUM_RUNS];
     
     printf("Process Scheduling Algorithms Simulation\n");
     printf("========================================\n\n");
@@ -57,6 +60,26 @@ int main() {
         rr_stats[i] = run_rr(procs, n, i + 1);
     }
     print_algorithm_summary("RR", rr_stats, NUM_RUNS);
+    
+    // Run HPF Non-preemptive 5 times
+    printf("\nRunning HPF Non-preemptive Algorithm...\n");
+    for (int i = 0; i < NUM_RUNS; i++) {
+        printf("\n--- HPF Non-preemptive Run %d ---\n", i + 1);
+        generate_processes(procs, &n, i + 4 * NUM_RUNS);
+        print_processes(procs, n);
+        hpf_non_preemptive_stats[i] = run_hpf_non_preemptive(procs, n, i + 1);
+    }
+    print_algorithm_summary("HPF Non-preemptive", hpf_non_preemptive_stats, NUM_RUNS);
+    
+    // Run HPF Preemptive 5 times
+    printf("\nRunning HPF Preemptive Algorithm...\n");
+    for (int i = 0; i < NUM_RUNS; i++) {
+        printf("\n--- HPF Preemptive Run %d ---\n", i + 1);
+        generate_processes(procs, &n, i + 5 * NUM_RUNS);
+        print_processes(procs, n);
+        hpf_preemptive_stats[i] = run_hpf_preemptive(procs, n, i + 1);
+    }
+    print_algorithm_summary("HPF Preemptive", hpf_preemptive_stats, NUM_RUNS);
 
     return 0;
 }
