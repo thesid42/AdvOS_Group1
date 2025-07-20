@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
     printf("\nFinal Results:");
     print_seating_chart();
 
-    printf("\nDetailed Statistics:\n");
+    printf("\nStatistical Overview:\n");
     print_statistics("High", high_stats);
     print_statistics("Medium", medium_stats);
     print_statistics("Low", low_stats);
