@@ -1,13 +1,11 @@
 #include "globals.h"
 
-char seat_map[NUM_ROWS][NUM_COLS][MAX_NAME_LEN] = {{{0}}};
-pthread_mutex_t seat_mutex = PTHREAD_MUTEX_INITIALIZER;
-
+pthread_mutex_t seat_mutexes[NUM_ROWS][NUM_COLS];
+char seating_chart[NUM_ROWS][NUM_COLS][SEAT_ID_LEN];
 Seller sellers[NUM_SELLERS];
+int global_time = 0;
 
-int sim_clock = 0;
-pthread_mutex_t clock_mutex = PTHREAD_MUTEX_INITIALIZER;
-pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
-
-int N_customers = 0;
-int sold_out = 0;
+pthread_mutex_t stats_mutex;
+SellerStats high_stats = {0, 0, 0L, 0L};
+SellerStats medium_stats = {0, 0, 0L, 0L};
+SellerStats low_stats = {0, 0, 0L, 0L};

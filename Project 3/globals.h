@@ -1,56 +1,71 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <pthread.h>
+#include <unistd.h>
+#include <time.h>
+#include <string.h>
 
 #define NUM_ROWS 10
 #define NUM_COLS 10
 #define NUM_SELLERS 10
-#define MAX_CUSTOMERS 100
-#define MAX_NAME_LEN 8
+#define SIMULATION_TIME 60
+#define SEAT_ID_LEN 4
 
-// Seller types
-#define H_SELLER 0
-#define M_SELLER 1
-#define L_SELLER 2
+typedef enum {
+    HIGH_PRICE,
+    MEDIUM_PRICE,
+    LOW_PRICE
+} SellerType;
 
-// Customer struct
-typedef struct Customer {
+// Forward declarations
+typedef struct Customer Customer;
+typedef struct Seller Seller;
+
+// Customer structure
+struct Customer {
     int id;
     int arrival_time;
-    int service_start;
-    int finish_time;
-    char name[MAX_NAME_LEN];
-    struct Customer *next;
-} Customer;
+    int start_time;
+    int completion_time;
+};
 
-// Seller struct
-typedef struct Seller {
-    int type; // H, M, L
-    int index; // 0-9
-    Customer *queue_head;
+// Seller structure
+struct Seller {
+    char name[4];
+    SellerType type;
+    Customer* queue[100];
+    int queue_size;
     pthread_t thread;
-    int customers_served;
-    int customers_turned_away;
-    int total_response_time;
-    int total_turnaround_time;
-    int total_customers;
-} Seller;
+};
 
-// Seat map
-extern char seat_map[NUM_ROWS][NUM_COLS][MAX_NAME_LEN];
-extern pthread_mutex_t seat_mutex;
+// Statistics structure
+typedef struct {
+    int served;
+    int turned_away;
+    long total_response_time;
+    long total_turnaround_time;
+} SellerStats;
 
-// Sellers array
+// Global variables
+extern pthread_mutex_t seat_mutexes[NUM_ROWS][NUM_COLS];
+extern pthread_mutex_t stats_mutex;
+extern char seating_chart[NUM_ROWS][NUM_COLS][SEAT_ID_LEN];
 extern Seller sellers[NUM_SELLERS];
+extern int global_time;
+extern SellerStats high_stats;
+extern SellerStats medium_stats;
+extern SellerStats low_stats;
 
-// Simulation clock
-extern int sim_clock;
-extern pthread_mutex_t clock_mutex;
-extern pthread_cond_t cond;
-
-// Simulation parameters
-extern int N_customers;
-extern int sold_out;
+// Function declarations
+void initialize_sellers(int customers_per_seller);
+void initialize_seating_chart();
+void print_seating_chart();
+void destroy_seat_mutexes();
+void* seller_thread(void* arg);
+int assign_seat(Seller* seller, int customer_id);
+int get_random_time(SellerType type);
 
 #endif
