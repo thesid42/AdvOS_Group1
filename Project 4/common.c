@@ -5,7 +5,7 @@ void initializeMemory(Memory *memory) {
     memory->count = 0;
 }
 
-void generateWorkload(JobQueue *jobQueue) {
+void generateWorkload(JobQueue *jobQueue) {             //this is called for each algorithm----//
     srand(time(NULL));
     jobQueue->head = NULL;
     jobQueue->count = 0;
@@ -219,7 +219,7 @@ void runSimulation(JobQueue *jobQueue, Memory *memory, int (*replacementAlgorith
     printf("Time (s) | Process | Page Referenced | Page in Memory | Evicted Process/Page\n");
     printf("---------|---------|-----------------|----------------|----------------------\n");
 
-    Job* currentJob = jobQueue->head;
+    Job* currentJob = jobQueue->head;  
 
     for (int globalTime = 0; globalTime < SIMULATION_TIME * 1000; globalTime += REFERENCE_INTERVAL) {
         // Add jobs that have arrived by this time
