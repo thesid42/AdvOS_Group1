@@ -1,0 +1,136 @@
+0:00.000: Child 1 message 1
+0:01.001: Child 1 message 2
+0:01.001: Child 1 message 3
+0:01.001: Child 1 message 4
+0:01.001: Child 1 message 5
+0:01.001: Child 4 message 1
+0:01.001: Child 4 message 2
+0:00.000: Child 5: in
+0:02.000: Child 2 message 1
+0:02.001: Child 3 message 1
+0:01.523: Child 5: case
+0:03.001: Child 1 message 6
+0:03.001: Child 4 message 3
+0:04.001: Child 2 message 2
+0:04.002: Child 2 message 3
+0:04.002: Child 1 message 7
+0:04.002: Child 3 message 2
+0:04.002: Child 4 message 4
+0:02.789: Child 5: i
+0:05.003: Child 1 message 8
+0:05.003: Child 1 message 9
+0:05.003: Child 1 message 10
+0:05.003: Child 4 message 5
+0:06.002: Child 2 message 4
+0:06.003: Child 2 message 5
+0:06.003: Child 2 message 6
+0:06.003: Child 2 message 7
+0:06.004: Child 1 message 11
+0:06.003: Child 3 message 3
+0:06.004: Child 4 message 6
+0:04.019: Child 5: dont
+0:07.005: Child 4 message 7
+0:08.008: Child 1 message 12
+0:08.007: Child 2 message 8
+0:08.006: Child 3 message 4
+0:08.006: Child 4 message 8
+0:06.597: Child 5: see
+0:09.007: Child 3 message 5
+0:09.007: Child 4 message 9
+0:09.007: Child 4 message 10
+0:08.070: Child 5: you
+0:10.008: Child 1 message 13
+0:10.007: Child 2 message 9
+0:11.008: Child 2 message 10
+0:11.008: Child 2 message 11
+0:11.008: Child 3 message 6
+0:11.008: Child 4 message 11
+0:11.008: Child 4 message 12
+0:09.710: Child 5: good
+0:12.009: Child 1 message 14
+0:12.009: Child 1 message 15
+0:12.009: Child 1 message 16
+0:12.009: Child 1 message 17
+0:13.009: Child 2 message 12
+0:13.009: Child 4 message 13
+0:13.009: Child 3 message 7
+0:13.009: Child 3 message 8
+0:11.588: Child 5: morning
+0:14.009: Child 1 message 18
+0:14.010: Child 2 message 13
+0:14.010: Child 4 message 14
+0:14.010: Child 3 message 9
+0:15.010: Child 2 message 14
+0:16.010: Child 1 message 19
+0:16.011: Child 4 message 15
+0:16.011: Child 3 message 10
+0:17.011: Child 1 message 20
+0:17.011: Child 1 message 21
+0:17.011: Child 2 message 15
+0:17.012: Child 4 message 16
+0:13.482: Child 5: evening
+0:18.012: Child 1 message 22
+0:18.013: Child 3 message 11
+0:18.013: Child 3 message 12
+0:18.013: Child 3 message 13
+0:18.015: Child 4 message 17
+0:17.092: Child 5: and
+0:19.012: Child 2 message 16
+0:19.012: Child 2 message 17
+0:19.013: Child 1 message 23
+0:19.016: Child 4 message 18
+0:19.017: Child 4 message 19
+0:19.017: Child 4 message 20
+0:20.014: Child 1 message 24
+0:20.013: Child 3 message 14
+0:20.017: Child 4 message 21
+0:18.486: Child 5: good
+0:21.013: Child 2 message 18
+0:21.013: Child 2 message 19
+0:21.015: Child 1 message 25
+0:22.014: Child 2 message 20
+0:22.015: Child 2 message 21
+0:22.015: Child 1 message 26
+0:22.015: Child 1 message 27
+0:22.015: Child 1 message 28
+0:22.015: Child 2 message 22
+0:22.014: Child 3 message 15
+0:22.018: Child 4 message 22
+0:20.595: Child 5: night
+0:23.016: Child 1 message 29
+0:23.019: Child 4 message 23
+0:24.016: Child 2 message 23
+0:24.015: Child 3 message 16
+0:24.020: Child 4 message 24
+0:25.016: Child 2 message 24
+0:25.016: Child 2 message 25
+0:25.017: Child 1 message 30
+0:25.017: Child 1 message 31
+0:25.017: Child 3 message 17
+0:22.414: Child 5: bye
+0:25.086: Child 5: now
+0:26.017: Child 2 message 26
+0:26.017: Child 2 message 27
+0:26.018: Child 3 message 18
+0:26.022: Child 4 message 25
+0:26.022: Child 4 message 26
+0:26.022: Child 4 message 27
+0:27.018: Child 1 message 32
+0:27.018: Child 2 message 28
+0:27.022: Child 4 message 28
+0:28.019: Child 1 message 33
+0:28.019: Child 1 message 34
+0:28.019: Child 2 message 29
+0:28.019: Child 3 message 19
+0:28.019: Child 3 message 20
+0:28.019: Child 3 message 21
+0:28.023: Child 4 message 29
+0:28.023: Child 4 message 30
+0:28.023: Child 4 message 31
+0:28.023: Child 4 message 32
+0:29.020: Child 2 message 30
+0:29.020: Child 2 message 31
+0:29.020: Child 3 message 22
+0:29.020: Child 3 message 23
+0:29.024: Child 4 message 33
+0:30.020: Child 1 message 35
